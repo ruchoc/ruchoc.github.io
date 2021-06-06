@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;ruchoc.github.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.5.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script><script src="/js/config.js"></script>
+<meta name="description" content="BASICgit init &lt;directroy&gt; 初始化 git clone &lt;repo&gt; 克隆指定的repo到本地，repo可以是SSH或HTTP git add &lt;directory&gt; 将目录下的所有修改加入到下一次commit中，把&lt;directory&gt;换成&lt;file&gt;将添加指定文件的修改 git commit -m”&lt;me">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="https://ruchoc.github.io/2021/06/04/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Ruchoc&#39;s Blog">
+<meta property="og:description" content="BASICgit init &lt;directroy&gt; 初始化 git clone &lt;repo&gt; 克隆指定的repo到本地，repo可以是SSH或HTTP git add &lt;directory&gt; 将目录下的所有修改加入到下一次commit中，把&lt;directory&gt;换成&lt;file&gt;将添加指定文件的修改 git commit -m”&lt;me">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-04T08:08:48.000Z">
+<meta property="article:modified_time" content="2021-06-05T10:30:48.702Z">
+<meta property="article:author" content="ruchoc">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ruchoc.github.io/2021/06/04/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;ruchoc.github.io&#x2F;2021&#x2F;06&#x2F;04&#x2F;git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;06&#x2F;04&#x2F;git常用命令&#x2F;&quot;,&quot;title&quot;:&quot;git常用命令&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>git常用命令 | Ruchoc's Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ruchoc's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Road to Transformation</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#BASIC"><span class="nav-number">1.</span> <span class="nav-text">BASIC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DIFF"><span class="nav-number">2.</span> <span class="nav-text">DIFF</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UNDOING-CHANGES"><span class="nav-number">3.</span> <span class="nav-text">UNDOING CHANGES</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BRANCHS"><span class="nav-number">4.</span> <span class="nav-text">BRANCHS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REMOTE"><span class="nav-number">5.</span> <span class="nav-text">REMOTE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LOG"><span class="nav-number">6.</span> <span class="nav-text">LOG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PUSH-amp-PULL"><span class="nav-number">7.</span> <span class="nav-text">PUSH&amp;PULL</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ruchoc</p>
+  <div class="site-description" itemprop="description">Nothing left.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruchoc.github.io/2021/06/04/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ruchoc">
+      <meta itemprop="description" content="Nothing left.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ruchoc's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git常用命令
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-04 16:08:48" itemprop="dateCreated datePublished" datetime="2021-06-04T16:08:48+08:00">2021-06-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-05 18:30:48" itemprop="dateModified" datetime="2021-06-05T18:30:48+08:00">2021-06-05</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="BASIC"><a href="#BASIC" class="headerlink" title="BASIC"></a>BASIC</h1><p>git init &lt;directroy&gt; 初始化</p>
+<p>git clone &lt;repo&gt; 克隆指定的repo到本地，repo可以是SSH或HTTP</p>
+<p>git add &lt;directory&gt; 将目录下的所有修改加入到下一次commit中，把&lt;directory&gt;换成&lt;file&gt;将添加指定文件的修改</p>
+<p>git commit -m”&lt;message&gt;“ 提交暂存区的修改，使用指定的&lt;message&gt;作为提交信息，而不是打开文本编辑器输入提交信息</p>
+<p>git status 显示哪些文件已被staged、未被staged以及为跟踪(untracked)</p>
+<p>git log 以缺省格式显示全部commit历史</p>
+<h1 id="DIFF"><a href="#DIFF" class="headerlink" title="DIFF"></a>DIFF</h1><p>git diff 比较工作区和暂存区的修改</p>
+<p>git diff HEAD 比较工作区与上一次commit后的修改</p>
+<p>git diff –cached 比较暂存区和上一次commit后的修改，与–staged参数作用一样</p>
+<p>git diff HEAD~X或git diff HEAD^^^…(共有X个^符号，X为正整数)可以比较最近一次提交的版本与前X次提交的版本</p>
+<p>git diff &lt;commit1&gt; &lt;commit2&gt; 可以比较两个commit</p>
+<h1 id="UNDOING-CHANGES"><a href="#UNDOING-CHANGES" class="headerlink" title="UNDOING CHANGES"></a>UNDOING CHANGES</h1><p>git restore –worktree &lt;file&gt; 撤销工作区的&lt;file&gt;的修改，–worktree为默认参数</p>
+<p>git restore –staged &lt;file&gt; 将&lt;file&gt;从暂存区移除，但保持工作区不变，此操作不会修改工作区的任何文件</p>
+<p>git reset –hard 移除所有暂存区的修改，并强制删除所有工作区的修改，去掉–hard即不会改变工作区，以下同理</p>
+<p>git reset –hard &lt;commit&gt; 将当前分支回滚到指定&lt;commit&gt;，清除暂存区的修改</p>
+<p>git reset –hard HEAD~X或git reset –hard HEAD^^^…(共有X个^符号，X为正整数)回退到前X个提交的版本</p>
+<h1 id="BRANCHS"><a href="#BRANCHS" class="headerlink" title="BRANCHS"></a>BRANCHS</h1><p>git branch -a 显示所有分支，去掉-a显示本地分支，换成-r参数显示远程分支</p>
+<p>git branch -m &lt;oldbranch&gt; &lt;newbranch&gt; 本地分支重命名</p>
+<p>git switch -c &lt;branch&gt; 创建并切换到一个新的名为&lt;branch&gt;的分支，去掉-c参数将切换到一个已有分支</p>
+<p>git merge &lt;branch&gt; 将指定&lt;branch&gt;分支合并到当前分支</p>
+<p>git branch –set-upstream-to=&lt;remote&gt;/&lt;remote_branch&gt; &lt;local_branch&gt; 本地分支关联远程分支</p>
+<h1 id="REMOTE"><a href="#REMOTE" class="headerlink" title="REMOTE"></a>REMOTE</h1><p>git remote -v 显示本地添加了哪些远程连接，-v参数代表详细</p>
+<p>git remote remove &lt;remote&gt; 删除本地指定远程连接</p>
+<p>git remote add &lt;name&gt; &lt;url&gt; 添加一个新的远程连接，添加后可使用&lt;name&gt;作为指定&lt;url&gt;远程连接的名称</p>
+<h1 id="LOG"><a href="#LOG" class="headerlink" title="LOG"></a>LOG</h1><p>git log -&lt;limit&gt; 限制log的显示数量，eg：git log -5 仅显示最新的5条commit</p>
+<p>git log –oneline 每行显示一条commit</p>
+<p>git log –author=”&lt;pattern&gt;“ 按提交者名字搜索并显示commit</p>
+<p>git log – &lt;file&gt; 仅显示包含指定文件修改的commit</p>
+<p>git log –graph 使用–graph参数显示图形化的branch信息</p>
+<p>git reflog 查看命令历史，回退后需要反悔的话，需要通过此命令查找到所有操作的提交点</p>
+<h1 id="PUSH-amp-PULL"><a href="#PUSH-amp-PULL" class="headerlink" title="PUSH&amp;PULL"></a>PUSH&amp;PULL</h1><p>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt; 将本地的分支版本上传到远程并合并，如果本地分支名与远程分支名相同，则可以省略冒号</p>
+<p>git push –force &lt;远程主机名&gt; &lt;远程分支名&gt; 若本地与远程有差异，但又要强制推送可以使用–force参数进行覆盖</p>
+<p>git push &lt;远程主机名&gt; –delete &lt;远程分支名&gt; 删除远程分支</p>
+<p>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt; 从远程获取代码并合并本地的版本，同上，名字相同时冒号可以省略</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/28/MySql%E7%AC%94%E8%AE%B0/" rel="prev" title="MySql笔记">
+                  <i class="fa fa-chevron-left"></i> MySql笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ruchoc</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

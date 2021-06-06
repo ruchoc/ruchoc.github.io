@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;ruchoc.github.io&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.5.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script><script src="/js/config.js"></script>
+<meta name="description" content="[TOC] markdown简介Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。其文本格式为.md 类似于html，只不过标签更简单，更易读易写，可以转化外html md不是一种编程语言，也不会代替html，适用写文档，写博客的。 可以直接添加html标签来写，也可以用md标签来写，也可以不用标签 优点：  纯文本，兼容性强，所有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown使用指南">
+<meta property="og:url" content="https://ruchoc.github.io/2021/02/22/markdown%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Ruchoc&#39;s Blog">
+<meta property="og:description" content="[TOC] markdown简介Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。其文本格式为.md 类似于html，只不过标签更简单，更易读易写，可以转化外html md不是一种编程语言，也不会代替html，适用写文档，写博客的。 可以直接添加html标签来写，也可以用md标签来写，也可以不用标签 优点：  纯文本，兼容性强，所有">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/ruchoc/markdownPhotos/raw/main/pictures/4.png">
+<meta property="og:image" content="http://mouapp.com/Mou_128.png">
+<meta property="article:published_time" content="2021-02-22T04:00:06.000Z">
+<meta property="article:modified_time" content="2021-06-04T02:43:55.292Z">
+<meta property="article:author" content="ruchoc">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/ruchoc/markdownPhotos/raw/main/pictures/4.png">
+
+
+<link rel="canonical" href="https://ruchoc.github.io/2021/02/22/markdown%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;https:&#x2F;&#x2F;ruchoc.github.io&#x2F;2021&#x2F;02&#x2F;22&#x2F;markdown%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;02&#x2F;22&#x2F;markdown使用指南&#x2F;&quot;,&quot;title&quot;:&quot;markdown使用指南&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>markdown使用指南 | Ruchoc's Blog</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ruchoc's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Road to Transformation</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">markdown简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">markdown编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E7%89%88"><span class="nav-number">2.1.</span> <span class="nav-text">在线版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#window%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">2.2.</span> <span class="nav-text">window客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mac%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">2.3.</span> <span class="nav-text">mac客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">浏览器插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">2.5.</span> <span class="nav-text">文本编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">2.6.</span> <span class="nav-text">参考文档</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-number">3.1.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD"><span class="nav-number">3.2.</span> <span class="nav-text">段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">3.3.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">3.4.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="nav-number">3.5.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">3.6.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%97%E4%BD%93"><span class="nav-number">3.7.</span> <span class="nav-text">粗体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%9C%E4%BD%93"><span class="nav-number">3.8.</span> <span class="nav-text">斜体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%97%E4%BD%93-%E6%96%9C%E4%BD%93"><span class="nav-number">3.9.</span> <span class="nav-text">粗体+斜体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="nav-number">3.10.</span> <span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E4%BA%AE"><span class="nav-number">3.11.</span> <span class="nav-text">高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%BC%95%E7%94%A8"><span class="nav-number">3.12.</span> <span class="nav-text">代码引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">3.13.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">3.14.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89"><span class="nav-number">3.15.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="nav-number">3.16.</span> <span class="nav-text">流程图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%9A%E7%82%B9"><span class="nav-number">3.17.</span> <span class="nav-text">锚点</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ruchoc</p>
+  <div class="site-description" itemprop="description">Nothing left.</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ruchoc.github.io/2021/02/22/markdown%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ruchoc">
+      <meta itemprop="description" content="Nothing left.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ruchoc's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          markdown使用指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-22 12:00:06" itemprop="dateCreated datePublished" datetime="2021-02-22T12:00:06+08:00">2021-02-22</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-04 10:43:55" itemprop="dateModified" datetime="2021-06-04T10:43:55+08:00">2021-06-04</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>[TOC]</p>
+<h1 id="markdown简介"><a href="#markdown简介" class="headerlink" title="markdown简介"></a>markdown简介</h1><p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。其文本格式为.md</p>
+<p>类似于html，只不过标签更简单，更易读易写，可以转化外html</p>
+<p>md不是一种编程语言，也不会代替html，适用写文档，写博客的。</p>
+<p>可以直接添加html标签来写，也可以用md标签来写，也可以不用标签</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>纯文本，兼容性强，所有的文本编辑器都支持</li>
+<li>让用户专注于内容而不是排版</li>
+<li>md可以随意转换为html，pdf，md格式的</li>
+<li>标记语法具有良好的可读性</li>
+</ul>
+<h1 id="markdown编辑器"><a href="#markdown编辑器" class="headerlink" title="markdown编辑器"></a>markdown编辑器</h1><h2 id="在线版"><a href="#在线版" class="headerlink" title="在线版"></a>在线版</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://dillinger.io/">1. dillinger</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackedit.io/">2. stackedit</a></li>
+<li><a target="_blank" rel="noopener" href="http://mahua.jser.me/">3. mahua</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.jianshu.com/">4. 博客平台－简书</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/">5. 博客平台－博客园</a></li>
+<li><a target="_blank" rel="noopener" href="https://maxiang.io/">6. 马克飞象</a></li>
+</ul>
+<h2 id="window客户端"><a href="#window客户端" class="headerlink" title="window客户端"></a>window客户端</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://markdownpad.com/">1. MarkdownPad</a></li>
+<li><a target="_blank" rel="noopener" href="http://code52.org/DownmarkerWPF/">2. MarkPad</a></li>
+<li><a target="_blank" rel="noopener" href="http://git.oschina.net/elerao/Smark">3. Smark</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/egoist/Miu">4. Miu</a></li>
+</ul>
+<h2 id="mac客户端"><a href="#mac客户端" class="headerlink" title="mac客户端"></a>mac客户端</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://25.io/mou/">1. mou</a></li>
+<li><a target="_blank" rel="noopener" href="http://macdown.uranusjr.com/">2. Macdown</a></li>
+<li><a target="_blank" rel="noopener" href="https://ulyssesapp.com/">3. UIysses</a></li>
+</ul>
+<h2 id="浏览器插件"><a href="#浏览器插件" class="headerlink" title="浏览器插件"></a>浏览器插件</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/made/oknndfeeopgpibecfjljjfanledpbkog/related">MaDe</a></li>
+</ul>
+<h2 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h2><ul>
+<li>Sublime Text</li>
+<li>Atom</li>
+<li>WebStorm</li>
+</ul>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://www.williamlong.info/archives/4319.html">月光博客</a></li>
+</ul>
+<h1 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>在标题前面加# 即可<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># title		//是一级标题</span><br><span class="line">## title	//是二级标题</span><br><span class="line">### title	//三级标题</span><br><span class="line">#### title	//四级</span><br><span class="line">##### title	//五级</span><br><span class="line">###### title//六级</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src="https://github.com/ruchoc/markdownPhotos/raw/main/pictures/4.png" alt="分级标题"></p>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>段落就是一段文字（此处即是一处段落）</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>无序列表是通过+、-、*来实现的<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+ html</span><br><span class="line">- css</span><br><span class="line">* js</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<ul>
+<li>html</li>
+</ul>
+<ul>
+<li>css</li>
+</ul>
+<ul>
+<li>js</li>
+</ul>
+<p>使用+<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+ html</span><br><span class="line">+ css</span><br><span class="line">+ js</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<ul>
+<li>html</li>
+<li>css</li>
+<li>js</li>
+</ul>
+<p>有序列表是通过1.,2.来表示的<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. html</span><br><span class="line">2. css</span><br><span class="line">3. js</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<ol>
+<li>html</li>
+<li>css</li>
+<li>js</li>
+</ol>
+<p>嵌套规则：上一级与下一级之间敲三个空格即可<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. html</span><br><span class="line">   1. css</span><br><span class="line">      1.js</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<ol>
+<li>html<ol>
+<li>css<br>1.js</li>
+</ol>
+</li>
+</ol>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>链接就是超链接</p>
+<ul>
+<li><p>不带title<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[百度](http://www.baidu.com)</span><br></pre></td></tr></table></figure>
+<p>结果：<br><a target="_blank" rel="noopener" href="http://www.baidu.com/">百度</a></p>
+</li>
+<li><p>带title<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[百度](http://www.baidu.com &quot;Title&quot;)</span><br><span class="line">[id]: http://www.baidu.com &quot;Title&quot;</span><br><span class="line">(other text)</span><br><span class="line">[百度][id]</span><br></pre></td></tr></table></figure>
+<p>结果：<br><a target="_blank" rel="noopener" href="http://www.baidu.com/" title="Title">百度</a></p>
+</li>
+<li><p>自动链接<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;http://www.baidu.com/&gt;</span><br></pre></td></tr></table></figure>
+<p>结果：<br><a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com/</a></p>
+</li>
+<li><p>自动生成邮箱<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;285182436@qq.com&gt;</span><br></pre></td></tr></table></figure>
+<p>结果：<br><a href="mailto:&#50;&#56;&#53;&#x31;&#56;&#x32;&#52;&#x33;&#54;&#64;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;">&#50;&#56;&#53;&#x31;&#56;&#x32;&#52;&#x33;&#54;&#64;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;</a></p>
+</li>
+</ul>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><ul>
+<li><p>插入本地图片<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![alt](/user/desktop/doge.png)	//这里采用相对路径，也可使用绝对路径</span><br></pre></td></tr></table></figure>
+<p>结果：<br>显示一张本地的图片</p>
+</li>
+<li><p>插入网络图片<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">![](http://mouapp.com/Mou_128.png)</span><br><span class="line">![alt](http://mouapp.com/Mou_128.png &#x27;optionalTitle&#x27;)</span><br><span class="line">![alt][id]</span><br><span class="line">(OTHER_TEXT)</span><br><span class="line">[id]: http://mouapp.com/Mou_128.png &quot;Title&quot;</span><br><span class="line">//三种语法效果一样</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src="http://mouapp.com/Mou_128.png" alt="alt" title="optionalTitle"></p>
+</li>
+<li><p>把图片存入markdown文件<br>用base64转码工具把图片转成一段字符串，然后把字符串填到基础格式中链接的那个位置<br>语法：<br><code>![](data:image/png;base64,iVBORw0......)</code><br>结果：<br>显示一张图片<br>这样做法经常会有字符串太长从而割裂整篇文章，非常影响阅读体验，所以可以结合上述第三种方法，把大段的字符串放到最后面<br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![][id]</span><br><span class="line">//文末存储字符串语法：</span><br><span class="line">[id]:data:image/png;base64,iVBORw0......</span><br></pre></td></tr></table></figure>
+<p>结果：<br>显示一张图片</p>
+</li>
+</ul>
+<p><em>综合考量，只推荐第二种方法。第三种方法操作麻烦还容易造成卡顿</em></p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 引用内容</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<blockquote>
+<p>引用内容</p>
+</blockquote>
+<p><em>多行引用</em><br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">    面朝大海，春暖花开</span><br><span class="line"></span><br><span class="line">&gt; 从明天起，做一个幸福的人   </span><br><span class="line"></span><br><span class="line">&gt; 喂马、劈柴，周游世界  </span><br><span class="line"></span><br><span class="line">&gt; 从明天起，关心粮食和蔬菜  </span><br><span class="line"></span><br><span class="line">&gt; 我有一所房子，面朝大海，春暖花开  </span><br><span class="line"></span><br><span class="line">&gt; 从明天起，和每一个亲人通信  </span><br><span class="line"></span><br><span class="line">&gt; 告诉他们我的幸福  </span><br><span class="line"></span><br><span class="line">&gt; 那幸福的闪电告诉我的  </span><br><span class="line"></span><br><span class="line">&gt; 我将告诉每一个人  </span><br><span class="line"></span><br><span class="line">&gt; 给每一条河每一座山取一个温暖的名字  </span><br><span class="line"></span><br><span class="line">&gt; 陌生人，我也为你祝福  </span><br><span class="line"></span><br><span class="line">&gt; 愿你有一个灿烂的前程  </span><br><span class="line"></span><br><span class="line">&gt; 愿你有情人终成眷属  </span><br><span class="line"></span><br><span class="line">&gt; 愿你在尘世获得幸福  </span><br><span class="line"></span><br><span class="line">&gt; 我只愿面朝大海，春暖花开  </span><br></pre></td></tr></table></figure>
+<p>结果：<br>    面朝大海，春暖花开</p>
+<blockquote>
+<p>从明天起，做一个幸福的人   </p>
+</blockquote>
+<blockquote>
+<p>喂马、劈柴，周游世界  </p>
+</blockquote>
+<blockquote>
+<p>从明天起，关心粮食和蔬菜  </p>
+</blockquote>
+<blockquote>
+<p>我有一所房子，面朝大海，春暖花开  </p>
+</blockquote>
+<blockquote>
+<p>从明天起，和每一个亲人通信  </p>
+</blockquote>
+<blockquote>
+<p>告诉他们我的幸福  </p>
+</blockquote>
+<blockquote>
+<p>那幸福的闪电告诉我的  </p>
+</blockquote>
+<blockquote>
+<p>我将告诉每一个人  </p>
+</blockquote>
+<blockquote>
+<p>给每一条河每一座山取一个温暖的名字  </p>
+</blockquote>
+<blockquote>
+<p>陌生人，我也为你祝福  </p>
+</blockquote>
+<blockquote>
+<p>愿你有一个灿烂的前程  </p>
+</blockquote>
+<blockquote>
+<p>愿你有情人终成眷属  </p>
+</blockquote>
+<blockquote>
+<p>愿你在尘世获得幸福  </p>
+</blockquote>
+<blockquote>
+<p>我只愿面朝大海，春暖花开  </p>
+</blockquote>
+<h2 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**粗体字**</span><br></pre></td></tr></table></figure>
+<p>结果：<br><strong>粗体字</strong></p>
+<h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*斜体字*</span><br></pre></td></tr></table></figure>
+<p>结果：<br><em>斜体字</em></p>
+<h2 id="粗体-斜体"><a href="#粗体-斜体" class="headerlink" title="粗体+斜体"></a>粗体+斜体</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***粗斜体字***</span><br></pre></td></tr></table></figure>
+<p>结果：<br><strong><em>粗斜体字</em></strong></p>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~删除线内容~~</span><br></pre></td></tr></table></figure>
+<p>结果：<br><del>删除线内容</del></p>
+<h2 id="高亮"><a href="#高亮" class="headerlink" title="高亮"></a>高亮</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==高亮内容==</span><br></pre></td></tr></table></figure>
+<p>结果：<br>==高亮内容==</p>
+<h2 id="代码引用"><a href="#代码引用" class="headerlink" title="代码引用"></a>代码引用</h2><p><em>单行代码引用</em><br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`引用内容`</span><br></pre></td></tr></table></figure>
+<p>结果：<br><code>引用内容</code></p>
+<p><em>多行代码引用</em><br>语法：<br>最上一行与最下一行都用三个`，中间写引用内容<br>结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">引用内容1</span><br><span class="line">引用内容2</span><br><span class="line">引用内容3</span><br></pre></td></tr></table></figure>
+
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<hr>
+<hr>
+<hr>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|left      |middle    |right     |</span><br><span class="line">|----------|:--------:|---------:|</span><br><span class="line">|1         |2         |3         |</span><br><span class="line">|4         |5         |6         |</span><br><span class="line">|7         |8         |9         |</span><br></pre></td></tr></table></figure>
+<p>结果：<br>|left      |middle    |right     |<br>|———-|:——–:|———:|<br>|1         |2         |3         |<br>|4         |5         |6         |<br>|7         |8         |9         |<br><em>注意第二行的冒号分别代表着居中和右对齐，默认左对齐</em></p>
+<h2 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h2><p>markdown判定在以下字符前加反斜杠\字符会以原样输出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\   反斜线</span><br><span class="line">`   反引号</span><br><span class="line">*   星号</span><br><span class="line">_   底线</span><br><span class="line">&#123;&#125;  花括号</span><br><span class="line">[]  方括号</span><br><span class="line">()  括弧</span><br><span class="line">#   井字号</span><br><span class="line">+   加号</span><br><span class="line">-   减号</span><br><span class="line">.   英文句点</span><br><span class="line">!   惊叹号</span><br></pre></td></tr></table></figure>
+<p>举例：<br><code>\\</code><br>结果：<br>\</p>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>语法：</p>
+<blockquote>
+<p>三个反引号+flow<br>st=&gt;start: 开始<br>op=&gt;operation: My Operation<br>cond=&gt;condition: Yes or No?<br>e=&gt;end<br>st-&gt;op-&gt;cond<br>cond(yes)-&gt;e<br>cond(no)-&gt;op<br>三个反引号</p>
+</blockquote>
+<p>结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>流程图中的条件语句指出箭头只能是yes或no</em></strong></p>
+<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>在你想要放置目录的地方独留一行<code>[toc]</code>即可自动生成目录树</p>
+<p><em>在目录树之外跳转到某个标题</em><br>语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[回到markdown简介](#markdown简介)</span><br><span class="line">//无论是几级标题，都只需一个#</span><br><span class="line">//在typora里跳转需要Ctrl+click</span><br><span class="line">//而在web环境下则不需要Ctrl</span><br></pre></td></tr></table></figure>
+<p>结果：<br><a href="#markdown%E7%AE%80%E4%BB%8B">回到markdown简介</a></p>
+<p>其它语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[id]: #markdown简介</span><br><span class="line">[id][]</span><br><span class="line">[回到markdown简介][id]</span><br></pre></td></tr></table></figure>
+<p>结果：<br>[id]: #markdown简介<br>[id][]<br>[回到markdown简介][id]</p>
+<p><strong>注意</strong><br>MarkDown形式的锚点目标的定义其实就是标题的定义即：任何级别的标题可以直接作为锚点目标；<br>锚点的目标内容中不能有大写字母和空格，所以如果锚点目标的目标内容中有大写字母或空格，<br>则需要在定义锚点中的目标内容时，把大写字母改成小写字母，把空格改成-</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/22/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/" rel="prev" title="博客搭建笔记">
+                  <i class="fa fa-chevron-left"></i> 博客搭建笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/02/28/MySql%E7%AC%94%E8%AE%B0/" rel="next" title="MySql笔记">
+                  MySql笔记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ruchoc</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
